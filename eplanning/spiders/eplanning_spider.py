@@ -9,7 +9,7 @@ class EplanningSpider(scrapy.Spider):
     def parse(self, response):
         urls = response.xpath('//a/@href').extract()
         for url in urls[0:10]:
-            if url == '#':
+            if '#' in url:
                 pass
             else:
                 yield Request(url, callback=self.parse_application)
