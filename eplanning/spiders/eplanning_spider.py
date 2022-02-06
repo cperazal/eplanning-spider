@@ -8,7 +8,7 @@ class EplanningSpider(scrapy.Spider):
 
     def parse(self, response):
         urls = response.xpath('//a/@href').extract()
-        for url in urls[0:10]:
+        for url in urls:
             if '#' in url:
                 pass
             else:
